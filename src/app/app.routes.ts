@@ -4,7 +4,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ServicesComponent } from './services/services.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { ContactComponent } from './contact/contact.component';
-import { GallaryComponent } from './gallary/gallary.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 export const routes: Routes = [ 
     { path: '', component: HomeComponent },
@@ -12,5 +12,5 @@ export const routes: Routes = [
     { path: 'services', component: ServicesComponent },
     { path: 'testimonials', component: TestimonialsComponent },
     { path: 'contact', component: ContactComponent },
-    { path: 'gallary', component: GallaryComponent }
+    { path: 'gallery', component: GalleryComponent }
 ];
