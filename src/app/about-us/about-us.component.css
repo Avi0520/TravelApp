@@ -1,5 +1,49 @@
-.redclass{
-    height: 800px;
-  background: #8de608;
-    width: 100%;
-}  
+.about-us {
+  background-color: #f9f9f9;
+  padding: 5%;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif /* Same font for everything */
+}
+
+.about-us h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.about-us p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+/* Metrics Section */
+.metrics-container {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.metric {
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.metric h3 {
+  font-size: 1.5rem;
+  color: #27ae60;
+  margin-bottom: 10px;
+}
+
+.counter {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #C82333; /* Deep Red */
+  transition: all 0.3s ease-in-out;
+}

@@ -1,5 +1,132 @@
-.redclass{
-    height: 800px;
-  background: #cc1313;
-    width: 100%;
-}    
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif /* Same font for everything */}
+
+/* Container to keep everything centered */
+.responsive-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Main Section */
+.cab-home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  max-width: 1200px;
+  margin: auto;
+  height: 580px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Left Side - Images */
+.image-container {
+  display: flex;
+}
+
+/* First Image */
+.img1 {
+  width: 600px; /* Increased width */
+  height: 600px; /* Increased height */
+  max-width: 100%;
+  object-fit: cover;
+  transform: translateX(-200px);
+}
+
+/* Second Image */
+.img2 {
+  width: 281px; /* Increased width */
+  height: auto; /* Adjusts height to maintain aspect ratio */
+  max-width: 100%;
+  object-fit: cover;
+  transform: translateX(-200px);
+}
+
+/* Right Side - Text & Button */
+.text-container {
+  max-width: 500px;
+}
+
+.main-text {
+  font-size: 3.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.sub-text {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.book-btn {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.book-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Scaling - Shrinks Entire Section Proportionally */
+@media (max-width: 1200px) {
+  .cab-home {
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 1000px) {
+  .cab-home {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 800px) {
+  .cab-home {
+    transform: scale(0.7);
+  }
+}
+
+@media (max-width: 600px) {
+  .cab-home {
+    transform: scale(0.6);
+  }
+}
+
+@media (max-width: 450px) {
+  .cab-home {
+    transform: scale(0.5);
+  }
+}
+
+/* Onload Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cab-home {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+

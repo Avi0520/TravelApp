@@ -1,4 +1,17 @@
-<p>about-us works!</p>
-<div class="redclass">
-    
+<div class="about-us">
+    <h2>About Us</h2>
+    <p>
+        Welcome to our travel service! We specialize in providing comfortable and 
+        reliable cabs to make your journey hassle-free. Whether you need a ride 
+        within the city or a long-distance trip, our professional drivers and 
+        well-maintained vehicles ensure a smooth experience.
+    </p>
+
+    <!-- Metrics Section -->
+    <div #metricsContainer class="metrics-container">
+        <div class="metric" *ngFor="let count of counts">
+            <h3>{{ count.label }}</h3>
+            <div class="counter">{{ count.value }}+</div> <!-- Added '+' sign -->
+        </div>
+    </div>
 </div>
