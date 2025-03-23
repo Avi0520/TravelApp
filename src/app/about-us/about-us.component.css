@@ -8,7 +8,7 @@
 .about-us h2 {
   font-size: 2rem;
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 90px;
 }
 
 .about-us p {
@@ -16,6 +16,8 @@
   color: #666;
   max-width: 80%;
   margin: 0 auto;
+  margin-bottom: 70px;
+
 }
 
 /* Metrics Section */
@@ -37,13 +39,13 @@
 
 .metric h3 {
   font-size: 1.5rem;
-  color: #27ae60;
+  color: #5064fc;
   margin-bottom: 10px;
 }
 
 .counter {
   font-size: 3rem;
   font-weight: bold;
-  color: #C82333; /* Deep Red */
+  color: #e05b5b; /* Deep Red */
   transition: all 0.3s ease-in-out;
 }

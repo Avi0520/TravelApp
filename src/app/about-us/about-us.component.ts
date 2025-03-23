@@ -12,10 +12,10 @@ export class AboutUsComponent implements AfterViewInit {
   
   @ViewChild('metricsContainer', { static: false }) metricsContainer!: ElementRef;
   counts = [
-    { label: 'Happy Customers', target: 10000, value: 0 },
-    { label: 'Total Rides', target: 25000, value: 0 },
-    { label: 'Available Cabs', target: 500, value: 0 },
-    { label: 'Years of Experience', target: 5, value: 0 }
+    { label: 'Happy Customers', target: 12650, value: 0 },
+    { label: 'Total Rides', target: 2500, value: 0 },
+    { label: 'Available Cabs', target: 52, value: 0 },
+    { label: 'Years of Experience', target: 18, value: 0 }
   ];
   
   private hasAnimated = false;

@@ -5,7 +5,8 @@
 }
 
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif /* Same font for everything */}
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
 /* Container to keep everything centered */
 .responsive-container {
@@ -30,41 +31,74 @@ body {
 
 /* Left Side - Images */
 .image-container {
+  position: relative;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* First Image */
+/* First Image (L1) */
 .img1 {
-  width: 600px; /* Increased width */
-  height: 600px; /* Increased height */
+  width: 600px;
+  height: 600px;
   max-width: 100%;
   object-fit: cover;
-  transform: translateX(-200px);
+  transform: translateX(-207px);
+  z-index: 1;
 }
 
-/* Second Image */
+/* Second Image (L2) - Positioned Above L1 */
 .img2 {
-  width: 281px; /* Increased width */
-  height: auto; /* Adjusts height to maintain aspect ratio */
+  width: 650px;
+  height: 580px;
   max-width: 100%;
   object-fit: cover;
-  transform: translateX(-200px);
+  position: absolute;
+  z-index: 2;
+
+  /* Center the image */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Apply rotation */
+  animation: slowRotate 200s linear infinite;
 }
+
+@keyframes slowRotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
 
 /* Right Side - Text & Button */
 .text-container {
   max-width: 500px;
+  width: 100%;
+  /* Ensure the container takes full width */
+  padding-left: 110px;
+  /* Add padding to move the text to the right */
 }
 
 .main-text {
   font-size: 3.1rem;
   font-weight: bold;
   color: #333;
+  line-height: 1;
+  /* Ensure the text stays on one line */
+  margin-bottom: 10px;
+  /* Add space between main text and sub-text */
 }
 
 .sub-text {
   font-size: 1.2rem;
   color: #555;
+  line-height: 1;
+  /* Ensure the text stays on one line */
   margin-bottom: 20px;
 }
 
@@ -72,7 +106,7 @@ body {
   font-size: 1.2rem;
   padding: 10px 20px;
   border-radius: 5px;
-  background-color: #007bff;
+  background-color: #5064fc;
   color: white;
   border: none;
   cursor: pointer;
@@ -81,6 +115,7 @@ body {
 .book-btn:hover {
   background-color: #0056b3;
 }
+
 
 /* Responsive Scaling - Shrinks Entire Section Proportionally */
 @media (max-width: 1200px) {
@@ -119,6 +154,7 @@ body {
     opacity: 0;
     transform: translateY(50px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -129,4 +165,3 @@ body {
   opacity: 0;
   animation: fadeInUp 1s ease-out forwards;
 }
-

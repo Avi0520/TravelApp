@@ -3,7 +3,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif /* Same font for everything */
 }
 .topbar {
-    background-color: #C82333; /* Deep Red */
+    background-color: #5064fc; /* Deep Red */
     color: white;
     display: flex;
     justify-content: space-between;
@@ -87,8 +87,8 @@
 }
 
 .nav-links a:hover {
-    color: #E74C3C; /* Vibrant red */
-    border-bottom: 2px solid #E74C3C;
+    color: #5064fc; /* Vibrant red */
+    border-bottom: 2px solid #5064fc;
 }
 
 /* Responsive Styles */
