@@ -1,9 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+*{ margin: 0; padding: 0; box-sizing: border-box; }
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -26,12 +21,14 @@ body {
   max-width: 1200px;
   margin: auto;
   height: 580px;
-  transition: transform 0.3s ease-in-out;
+  transform-origin: center; /* Ensure scaling happens from the center */
 }
 
 /* Left Side - Images */
 .image-container {
   position: relative;
+  width: 100%; /* Ensure the container takes full width */
+  height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,26 +40,22 @@ body {
   height: 600px;
   max-width: 100%;
   object-fit: cover;
-  transform: translateX(-207px);
+  transform: translateX(-202px);
   z-index: 1;
 }
 
 /* Second Image (L2) - Positioned Above L1 */
 .img2 {
-  width: 650px;
-  height: 580px;
-  max-width: 100%;
+  width: 550px;
+  height: 540px;
+  max-width: 100%; /* Ensure it doesn't exceed the container width */
   object-fit: cover;
   position: absolute;
   z-index: 2;
-
-  /* Center the image */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  /* Apply rotation */
-  animation: slowRotate 200s linear infinite;
+  top: 53%;
+  left: 65%;
+  transform: translate(-50%, -50%) rotate(0deg); /* Center and rotate */
+  animation: slowRotate 202s linear infinite;
 }
 
 @keyframes slowRotate {
@@ -74,14 +67,11 @@ body {
   }
 }
 
-
 /* Right Side - Text & Button */
 .text-container {
   max-width: 500px;
-  width: 100%;
-  /* Ensure the container takes full width */
-  padding-left: 110px;
-  /* Add padding to move the text to the right */
+  width: 100%; /* Ensure the container takes full width */
+  padding-left: 110px; /* Add padding to move the text to the right */
 }
 
 .main-text {
@@ -89,16 +79,13 @@ body {
   font-weight: bold;
   color: #333;
   line-height: 1;
-  /* Ensure the text stays on one line */
-  margin-bottom: 10px;
-  /* Add space between main text and sub-text */
+  margin-bottom: 10px; /* Add space between main text and sub-text */
 }
 
 .sub-text {
   font-size: 1.2rem;
   color: #555;
   line-height: 1;
-  /* Ensure the text stays on one line */
   margin-bottom: 20px;
 }
 
@@ -116,8 +103,7 @@ body {
   background-color: #0056b3;
 }
 
-
-/* Responsive Scaling - Shrinks Entire Section Proportionally */
+/* Responsive Scaling - Adjust the scale of .cab-home based on screen size */
 @media (max-width: 1200px) {
   .cab-home {
     transform: scale(0.9);
@@ -154,7 +140,6 @@ body {
     opacity: 0;
     transform: translateY(50px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
