@@ -48,8 +48,17 @@
 }
 
 .logo img {
-    height: 50px;
+    max-height: 165px; /* Adjust the value */
+    width: 130px;
 }
+.logo {
+    /* position: absolute; */
+    left: 20px;
+    top: 50%;
+    /* transform: translateY(-50%); */
+}
+
+
 
 /* Hide checkbox */
 #menu-toggle {

@@ -1,5 +1,105 @@
-.redclass{
-    height: 800px;
-  background: #1c1c1c;
-    width: 100%;
-}    
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #f4f4f4;
+}
+
+.services-container {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.services-heading {
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 25px;
+  margin-bottom: 50px; /* Increased gap between heading and cards */
+
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.service-card {
+  width: 320px;
+  height: 370px;
+  padding: 25px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: center;
+}
+
+/* Hover effect */
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  background-color: #b8c0f5;
+}
+
+.service-card:hover h2 {
+  color: black;
+}
+
+.service-card:hover p {
+  color: white;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.9);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+.service-card {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.service-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+h2 {
+  color: #007bff;
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .services-grid {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .service-card {
+      width: 90%;
+      max-width: 350px;
+      height: auto;
+  }
+}
