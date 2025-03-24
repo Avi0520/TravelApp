@@ -1,3 +1,51 @@
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 40px;
+  left: 2%;
+  width: 50px;
+  height: 50px;
+  z-index: 1000;
+  animation: floatAnimation 3s infinite ease-in-out;
+}
+
+/* Floating animation */
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0px);
   }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.whatsapp-float img {
+  width: 100%;
+  border-radius: 40%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Make it responsive */
+@media screen and (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .whatsapp-float {
+    bottom: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+  }
+}

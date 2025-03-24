@@ -10,7 +10,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NavBarComponent, AboutUsComponent, ServicesComponent,  FooterComponent, HomeComponent, ContactComponent, GalleryComponent,FooterComponent],
+  imports: [NavBarComponent, AboutUsComponent, ServicesComponent, FooterComponent, HomeComponent, ContactComponent, GalleryComponent,FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

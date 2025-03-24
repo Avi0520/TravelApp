@@ -1,4 +1,11 @@
-*{ margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
 body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -36,26 +43,37 @@ body {
 
 /* First Image (L1) */
 .img1 {
-  width: 600px;
+  width: 470px;
   height: 600px;
   max-width: 100%;
   object-fit: cover;
-  transform: translateX(-202px);
+  transform: translateX(-240px);
   z-index: 1;
 }
 
 /* Second Image (L2) - Positioned Above L1 */
 .img2 {
-  width: 550px;
-  height: 540px;
-  max-width: 100%; /* Ensure it doesn't exceed the container width */
+  width: 500px;
+  height: 480px;
+  max-width: 100%;
   object-fit: cover;
   position: absolute;
   z-index: 2;
   top: 52%;
-  left: 60%;
-  transform: translate(-50%, -50%) rotate(0deg); /* Center and rotate */
+  left: 30%;
+  /* transform: translate(-30%, -50%) rotate(0deg); */
   animation: slowRotate 202s linear infinite;
+}
+
+/* New Third Image (L3) - Positioned to the most right */
+.img3 {
+  width: 580px;
+  height: 215px;
+  object-fit: cover;
+  position: absolute;
+  right: -755px; /* Move it towards the right */
+  bottom: 25px;
+  z-index: 3;
 }
 
 @keyframes slowRotate {
@@ -69,17 +87,19 @@ body {
 
 /* Right Side - Text & Button */
 .text-container {
-  max-width: 500px;
-  width: 100%; /* Ensure the container takes full width */
-  padding-left: 110px; /* Add padding to move the text to the right */
+  position: relative;
+
+  max-width: 550px;
+  width: 100%;
+  left: -60px;
 }
 
 .main-text {
-  font-size: 3.1rem;
+  font-size: 3.5rem;
   font-weight: bold;
   color: #333;
   line-height: 1;
-  margin-bottom: 10px; /* Add space between main text and sub-text */
+  margin-bottom: 10px;
 }
 
 .sub-text {
@@ -103,7 +123,7 @@ body {
   background-color: #0056b3;
 }
 
-/* Responsive Scaling - Adjust the scale of .cab-home based on screen size */
+/* Responsive Scaling */
 @media (max-width: 1200px) {
   .cab-home {
     transform: scale(0.9);
@@ -150,5 +170,3 @@ body {
   opacity: 0;
   animation: fadeInUp 1s ease-out forwards;
 }
-
-
