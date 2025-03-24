@@ -1,4 +1,57 @@
-.redclass{
-    height: 800px;
-background-color: rgb(168, 21, 217);    width: 100%;
-}  
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    justify-content: center;
+    gap: 20px; /* Adds spacing between sections */
+    padding: 20px;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 250px; /* Ensures sections stack when the screen is narrow */
+    margin: 10px;
+  }
+  
+  .footer-section h3 {
+    color: #f4a261;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin: 5px 0;
+  }
+  
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-section p a {
+    color: #e8ebee; /* Light color for phone and email */
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .footer-section p a:hover {
+    color: #edeff2;
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    font-size: 14px;
+    margin-top: 20px;
+  }

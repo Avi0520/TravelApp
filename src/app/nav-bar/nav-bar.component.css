@@ -1,6 +1,6 @@
 /* Topbar */
 *{
-    font-family: Verdana, Geneva, Tahoma, sans-serif /* Same font for everything */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .topbar {
     background-color: #5064fc; /* Deep Red */
