@@ -16,17 +16,17 @@ body {
 
 .title {
     font-size: 34px;
-    margin-bottom: 30px; /* Reduced space below title */
+    margin-bottom: 30px;
     color: #2c695f;
 }
 
 .cards-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px; /* Keeps spacing consistent */
+    gap: 40px;
     justify-content: center;
     max-width: 90%;
-    margin-bottom: 20px; /* Fixes extra bottom gap */
+    margin-bottom: 20px;
 }
 
 .card {
@@ -35,18 +35,29 @@ body {
     padding: 10px;
 }
 
+/* Image Styling */
 .card img {
     width: 180px;
     height: 180px;
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid #172d2a;
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+/* Image Hover Effect */
+.card img:hover {
+    transform: scale(1.1); /* Slight zoom effect */
 }
 
 .card p {
     margin-top: 10px;
     font-size: 15px;
     color: #333;
+}
+
+.cab-service {
+    margin-bottom: 50px;
 }
 
 /* Responsive Design */
