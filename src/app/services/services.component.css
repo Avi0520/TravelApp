@@ -1,5 +1,81 @@
-.redclass{
-    height: 800px;
-  background: #1c1c1c;
-    width: 100%;
-}    
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.services-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.services-heading {
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.service-card {
+  display: inline-block;
+  width: 320px;
+  height: 350px; /* Increased height */
+  padding: 25px;
+  margin: 25px; /* More gap between cards */
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.service-card:hover {
+  transform: translateY(-10px); /* Moves up slightly */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  background-color: #b8c0f5;
+  
+}
+
+.service-card:hover h2{
+  color: black;
+}
+.service-card:hover p {
+  color: white; /* Ensure both heading and paragraph text turn white */
+}
+
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.service-card {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.service-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+h2 {
+  color: #007bff;
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6; /* Increased line spacing */
+  margin-bottom: 10px; /* Added more gap between paragraphs */
+}
