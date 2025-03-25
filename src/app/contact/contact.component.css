@@ -13,6 +13,7 @@ body {
   background-color: #fefbfb;
 }
 
+/* 🟢 Main Container */
 .contact-container {
   display: flex;
   justify-content: space-between;
@@ -21,7 +22,7 @@ body {
   max-width: 1200px;
 }
 
-/* Left Side: Booking Info */
+/* 🔹 Left Side: Booking Info */
 .ride-now {
   flex: 1;
   text-align: left;
@@ -43,8 +44,9 @@ body {
   margin-top: 10px;
 }
 
-/* Right Side: Contact Card */
+/* 🔹 Right Side: Contact Card */
 .contact-card {
+  max-width: 100%;
   width: 500px;
   padding: 30px;
   background: white;
@@ -54,6 +56,7 @@ body {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   animation: fadeIn 0.6s ease-in-out;
 }
+
 .contact-card:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
@@ -66,7 +69,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* Contact Details - Modified Section */
+/* 🔹 Contact Details */
 .contact-details {
   margin-bottom: 20px;
   text-align: left;
@@ -100,7 +103,7 @@ body {
   text-decoration: underline;
 }
 
-/* WhatsApp Button */
+/* 🔹 WhatsApp Button */
 .whatsapp-button {
   display: inline-block;
   margin-top: 10px;
@@ -118,7 +121,7 @@ body {
   background: #1ebe57;
 }
 
-/* Map Container Styles */
+/* 🔹 Map Container */
 .map-container {
   margin-top: 20px;
   text-align: center;
@@ -134,37 +137,37 @@ body {
 
 .map-frame {
   width: 100%;
-  height: 160px; /* Reduced from original 200px */
+  height: 160px;
   border: none;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Fade-in animation */
+/* 🔹 Fade-in Animation */
 @keyframes fadeIn {
   from {
-      opacity: 0;
-      transform: scale(0.9);
+    opacity: 0;
+    transform: scale(0.9);
   }
   to {
-      opacity: 1;
-      transform: scale(1);
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
-/* Responsive Design */
+/* 🟢 Responsive Design */
 @media (max-width: 1024px) {
   .ride-now h2 {
-      font-size: 50px;
+    font-size: 50px;
   }
 
   .ride-now p {
-      font-size: 18px;
+    font-size: 18px;
   }
 
   .contact-card {
-      width: 320px;
-      padding: 25px;
+    max-width: 400px;
+    padding: 25px;
   }
   
   .map-frame {
@@ -174,23 +177,24 @@ body {
 
 @media (max-width: 768px) {
   .contact-container {
-      flex-direction: column;
-      text-align: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .ride-now {
-      max-width: 100%;
-      text-align: center;
-      margin-bottom: 30px;
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
   }
 
   .ride-now h2 {
-      font-size: 45px;
+    font-size: 45px;
   }
 
   .contact-card {
-      width: 100%;
-      max-width: 350px;
+    max-width: 90%;
+    padding: 20px;
   }
   
   .map-frame {
@@ -200,31 +204,31 @@ body {
 
 @media (max-width: 480px) {
   .ride-now h2 {
-      font-size: 36px;
+    font-size: 36px;
   }
 
   .ride-now p {
-      font-size: 16px;
+    font-size: 16px;
   }
 
   .contact-card {
-      padding: 20px;
-      width: 90%;
+    padding: 15px;
+    max-width: 95%;
   }
 
   .contact-details p {
-      flex-direction: column;
-      align-items: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .contact-details p strong {
-      margin-bottom: 5px;
-      margin-right: 0;
+    margin-bottom: 5px;
+    margin-right: 0;
   }
 
   .whatsapp-button {
-      font-size: 14px;
-      padding: 10px 16px;
+    font-size: 14px;
+    padding: 10px 16px;
   }
   
   .map-container h3 {
