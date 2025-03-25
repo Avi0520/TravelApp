@@ -1,8 +1,22 @@
+
+/* Fade-up animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .about-us {
   background-color: #f9f9f9;
   padding: 5%;
   text-align: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  animation: fadeUp 1s ease-in-out;
+
 }
 
 .about-us h2 {
