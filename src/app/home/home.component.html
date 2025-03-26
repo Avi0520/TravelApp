@@ -1,21 +1,23 @@
-<body>
-    <section class="cab-home">
+<section class="cab-home container-fluid">
+    <div class="row align-items-center">
         <!-- Left Side (Images) -->
-        <div class="image-container">
-            <img src="assets/L1.jpg" class="img1" alt="Cab Image 1">
-            <img src="assets/L2.png" class="img2" alt="Cab Image 2">
-            <img src="assets/carh.png" class="img3" alt="Cab Image 3"> <!-- New Car Image -->
+        <div class="col-6 col-sm-6 col-md-6 col-lg-4 text-center">
+            <div class="image-container">
+                <img src="assets/L1.jpg" class="img1" alt="Main Background Image">
+                <img src="assets/L2.png" class="img2" alt="Overlapping Image">
+            </div>
+            
         </div>
 
         <!-- Right Side (Text & Button) -->
-        <div class="text-container">
+        <div class="col-6 col-sm-6 col-md-6 col-lg-4  text-center text-md-start text-container">
             <h1 class="main-text">Sai Rath Cabs</h1>
             <p class="sub-text">Airport Pickup & Drop.</p>
             <p class="sub-text">Intercity Cabs Available.</p>
-
-            <button class="book-btn" (click)="scrollToContact()">Book Now</button>
-
-              
+            <button class="book-btn" onclick="scrollToContact()">Book Now</button>
         </div>
-    </section>
-</body>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 ">
+            <img src="assets/carh.png" class="img-fluid mb-2 img3" alt="Cab Image 3"> 
+        </div>
+    </div>
+</section>
