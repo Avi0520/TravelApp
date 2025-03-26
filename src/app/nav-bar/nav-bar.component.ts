@@ -22,4 +22,12 @@ export class NavBarComponent {
     }, 100); // Small delay to ensure the DOM is ready
   }
 
+  closeMenu(): void {
+    const menuToggle = document.getElementById('menu-toggle') as HTMLInputElement;
+    if (menuToggle) {
+      menuToggle.checked = false;
+    }
+  }
+  
+
 }
