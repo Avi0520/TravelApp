@@ -23,17 +23,20 @@ body {
 .cards-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 45px;
     justify-content: center;
     max-width: 90%;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .card {
     width: 260px;
     text-align: center;
     padding: 10px;
+    background-color: #fff; /* Ensures it's not transparent */
+    border: none; /* Removes any unwanted borders */
 }
+
 
 /* Image Styling */
 .card img {

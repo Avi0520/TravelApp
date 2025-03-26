@@ -28,20 +28,23 @@ body {
 
 .service-card {
   width: 320px;
-  height: 370px;
+  height: 400px;
   padding: 25px;
   background: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   text-align: center;
+  border: 2.1px solid #b8c0f5; /* Added border */
 }
+
 
 /* Hover effect */
 .service-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
   background-color: #b8c0f5;
+
 }
 
 .service-card:hover h2 {

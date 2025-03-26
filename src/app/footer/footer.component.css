@@ -1,9 +1,12 @@
+/* Footer Styles */
 .footer {
   background-color: #222;
   color: #fff;
   padding: 20px;
   text-align: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  border-radius: 10px; /* Rounded corners */
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+               'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .footer-container {
@@ -15,6 +18,7 @@
   padding: 20px;
   max-width: 1200px;
   margin: auto;
+  border-radius: 10px; /* Rounded corners */
 }
 
 .footer-section {
@@ -27,16 +31,15 @@
 /* Google Maps Section (Aligned Left) */
 .map-container {
   flex-basis: 20%; /* Small size */
-  min-width: 200px; /* Ensures it doesn’t shrink too much */
+  min-width: 200px;
   text-align: left;
 }
 
 .map-frame {
-  width: 72%;
-  height: 220px;
+  width: 100%;
+  height: 150px;
   border: 0;
   border-radius: 5px;
-  margin-top: 10px;
 }
 
 .footer-section h3 {
@@ -72,4 +75,39 @@
   padding-top: 10px;
   font-size: 14px;
   margin-top: 20px;
+  text-align: center;
+  border-radius: 15px; /* Rounded corners */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-section {
+    min-width: 100%;
+    text-align: center;
+  }
+
+  .map-container {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 10px;
+  }
+
+  .footer-section h3 {
+    font-size: 18px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+  }
 }

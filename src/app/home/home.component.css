@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* Container to keep everything centered */
@@ -19,61 +19,36 @@ body {
   overflow: hidden;
 }
 
-/* Main Section */
-.cab-home {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 50px;
-  max-width: 1200px;
-  margin: auto;
-  height: 580px;
-  transform-origin: center; /* Ensure scaling happens from the center */
-}
+
 
 /* Left Side - Images */
 .image-container {
-  position: relative;
-  width: 100%; /* Ensure the container takes full width */
-  height: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative; /* Parent container for absolute positioning */
+  display: inline-block;
 }
-
 /* First Image (L1) */
 .img1 {
-  width: 470px;
-  height: 600px;
-  max-width: 100%;
-  object-fit: cover;
-  transform: translateX(-240px);
-  z-index: 1;
+  width: 100%; /* Full width */
+  display: block;
 }
 
-/* Second Image (L2) - Positioned Above L1 */
 .img2 {
-  width: 500px;
-  height: 480px;
-  max-width: 100%;
-  object-fit: cover;
   position: absolute;
-  z-index: 2;
-  top: 52%;
-  left: 30%;
+  top: 55%; /* Adjust overlap position */
+  left: 75%; /* Center alignment */
+  transform: translate(-50%, -50%); /* Center the image properly */
+  width: 90%; /* Adjust size */
+  z-index: 1; /* Ensure it's above img1 */
   /* transform: translate(-30%, -50%) rotate(0deg); */
   animation: slowRotate 202s linear infinite;
 }
 
 /* New Third Image (L3) - Positioned to the most right */
 .img3 {
-  width: 580px;
-  height: 215px;
+  width: auto;
+  height: auto;
   object-fit: cover;
-  position: absolute;
-  right: -755px; /* Move it towards the right */
-  bottom: 25px;
-  z-index: 3;
+  margin-top: 20vw;
 }
 
 @keyframes slowRotate {
@@ -87,11 +62,7 @@ body {
 
 /* Right Side - Text & Button */
 .text-container {
-  position: relative;
-
-  max-width: 550px;
-  width: 100%;
-  left: -60px;
+  padding-left: 7.5vw;
 }
 
 .main-text {
@@ -124,49 +95,67 @@ body {
 }
 
 /* Responsive Scaling */
-@media (max-width: 1200px) {
-  .cab-home {
-    transform: scale(0.9);
-  }
-}
 
-@media (max-width: 1000px) {
-  .cab-home {
-    transform: scale(0.8);
+@media (max-width:800px) {
+  .img3{
+    text-align: center;
+    width: 100vw;
+    padding: 0%;
+    margin-top:10vw ;
   }
+  .main-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  
+  .sub-text {
+    font-size: 0.6rem;
+    color: #555;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+  
+  .book-btn {
+    font-size: 1rem;
+    padding: 7px 15px;
+    border-radius: 5px;
+    background-color: #5064fc;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
 }
-
-@media (max-width: 800px) {
-  .cab-home {
-    transform: scale(0.7);
+@media (max-width:1000px) {
+  .text-container {
+    padding-left: 11vw;
   }
-}
-
-@media (max-width: 600px) {
-  .cab-home {
-    transform: scale(0.6);
+  .main-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    line-height: 1;
+    margin-bottom: 10px;
   }
-}
-
-@media (max-width: 450px) {
-  .cab-home {
-    transform: scale(0.5);
+  
+  .sub-text {
+    font-size: 0.6rem;
+    color: #555;
+    line-height: 1;
+    margin-bottom: 20px;
   }
-}
-
-/* Onload Animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
+  
+  .book-btn {
+    font-size: 1rem;
+    padding: 7px 15px;
+    border-radius: 5px;
+    background-color: #5064fc;
+    color: white;
+    border: none;
+    cursor: pointer;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.cab-home {
-  opacity: 0;
-  animation: fadeInUp 1s ease-out forwards;
+  
 }
