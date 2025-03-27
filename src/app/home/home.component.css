@@ -19,8 +19,6 @@ body {
   overflow: hidden;
 }
 
-
-
 /* Left Side - Images */
 .image-container {
   position: relative; /* Parent container for absolute positioning */
@@ -62,11 +60,13 @@ body {
 
 /* Right Side - Text & Button */
 .text-container {
-  padding-left: 7.5vw;
+  position: relative; /* Needed for overlap */
+  left: 10vw; /* Move right beyond its column */
+  z-index: 2; /* Ensure it's above other elements */
 }
 
 .main-text {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: bold;
   color: #333;
   line-height: 1;
@@ -126,6 +126,11 @@ body {
     color: white;
     border: none;
     cursor: pointer;
+  }
+  .text-container {
+    position: relative; /* Needed for overlap */
+  left: -2vw; /* Move right beyond its column */
+  z-index: 2; 
   }
   
 }
