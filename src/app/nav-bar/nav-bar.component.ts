@@ -11,4 +11,23 @@ import { RouterModule } from '@angular/router';
 })
 export class NavBarComponent {
 
+  scrollToSection(sectionId: string): void {
+    setTimeout(() => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        console.warn(`Section #${sectionId} not found!`);
+      }
+    }, 100); // Small delay to ensure the DOM is ready
+  }
+
+  closeMenu(): void {
+    const menuToggle = document.getElementById('menu-toggle') as HTMLInputElement;
+    if (menuToggle) {
+      menuToggle.checked = false;
+    }
+  }
+  
+
 }

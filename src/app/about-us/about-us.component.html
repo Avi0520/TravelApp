@@ -1,4 +1,18 @@
-<p>about-us works!</p>
-<div class="redclass">
-    
+<div class="about-us" >
+    <h2>About Us</h2>
+    <p>
+        Welcome to Sai Rath Cabs!
+
+        We specialize in Airport Pickups & Drops, Intercity Travel, and Local Cab Services, ensuring a smooth and
+        stress-free journey. Whether you need a timely airport transfer, a comfortable intercity ride, or a reliable
+        local cab, our professional drivers and well-maintained vehicles are here to serve you.
+    </p>
+
+    <!-- Metrics Section -->
+    <div #metricsContainer class="metrics-container"  >
+        <div class="metric" *ngFor="let count of counts">
+            <h3>{{ count.label }}</h3>
+            <div class="counter">{{ count.value }}+</div> <!-- Added '+' sign -->
+        </div>
+    </div>
 </div>

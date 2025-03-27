@@ -1,5 +1,166 @@
-.redclass{
-    height: 800px;
-  background: #cc1313;
-    width: 100%;
-}    
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Container to keep everything centered */
+.responsive-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Left Side - Images */
+.image-container {
+  position: relative; /* Parent container for absolute positioning */
+  display: inline-block;
+}
+/* First Image (L1) */
+.img1 {
+  width: 100%; /* Full width */
+  display: block;
+}
+
+.img2 {
+  position: absolute;
+  top: 55%; /* Adjust overlap position */
+  left: 75%; /* Center alignment */
+  transform: translate(-50%, -50%); /* Center the image properly */
+  width: 90%; /* Adjust size */
+  z-index: 1; /* Ensure it's above img1 */
+  /* transform: translate(-30%, -50%) rotate(0deg); */
+  animation: slowRotate 202s linear infinite;
+}
+
+/* New Third Image (L3) - Positioned to the most right */
+.img3 {
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  margin-top: 20vw;
+}
+
+@keyframes slowRotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Right Side - Text & Button */
+.text-container {
+  position: relative; /* Needed for overlap */
+  left: 10vw; /* Move right beyond its column */
+  z-index: 2; /* Ensure it's above other elements */
+}
+
+.main-text {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #333;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.sub-text {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.book-btn {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #5064fc;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.book-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Scaling */
+
+@media (max-width:800px) {
+  .img3{
+    text-align: center;
+    width: 100vw;
+    padding: 0%;
+    margin-top:10vw ;
+  }
+  .main-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  
+  .sub-text {
+    font-size: 0.6rem;
+    color: #555;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+  
+  .book-btn {
+    font-size: 1rem;
+    padding: 7px 15px;
+    border-radius: 5px;
+    background-color: #5064fc;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .text-container {
+    position: relative; /* Needed for overlap */
+  left: -2vw; /* Move right beyond its column */
+  z-index: 2; 
+  }
+  
+}
+@media (max-width:1000px) {
+  .text-container {
+    padding-left: 11vw;
+  }
+  .main-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  
+  .sub-text {
+    font-size: 0.6rem;
+    color: #555;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+  
+  .book-btn {
+    font-size: 1rem;
+    padding: 7px 15px;
+    border-radius: 5px;
+    background-color: #5064fc;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+}

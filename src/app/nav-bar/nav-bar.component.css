@@ -1,19 +1,28 @@
+
 /* Topbar */
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 .topbar {
-    background-color: rgb(43, 43, 43);
+    background-color: #5064fc; 
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 5%;
+    padding: 15px 5%;
     font-size: 1rem;
     flex-wrap: wrap;
+    text-align: center;
 }
 
 .contact-info {
     font-weight: bold;
     flex: 1;
     min-width: 250px;
+    display: flex;
+    gap: 80px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .contact-info a {
@@ -28,18 +37,29 @@
 
 /* Navbar */
 .navbar {
-    background-color: white;
+    background-color: #FFFFFF; /* Pure white */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 5%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
+    position: sticky; /* Make navbar sticky */
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 1000; /* Ensure navbar stays above other content */
 }
 
 .logo img {
-    height: 50px;
+    max-height: 165px; /* Adjust the value */
+    width: 130px;
 }
+.logo {
+    /* position: absolute; */
+    left: 20px;
+    top: 50%;
+    /* transform: translateY(-50%); */
+}
+
+
 
 /* Hide checkbox */
 #menu-toggle {
@@ -51,6 +71,7 @@
     font-size: 30px;
     cursor: pointer;
     display: none;
+    color: #2C3E50; /* Dark blue-gray */
 }
 
 /* Nav Links */
@@ -67,7 +88,7 @@
 
 .nav-links a {
     text-decoration: none;
-    color: black;
+    color: #2C3E50; /* Dark blue-gray */
     font-size: 1rem;
     font-weight: bold;
     padding: 10px;
@@ -76,12 +97,24 @@
 }
 
 .nav-links a:hover {
-    color: #e63946;
-    border-bottom: 2px solid #e63946;
+    color: #5064fc; /* Vibrant red */
+    border-bottom: 2px solid #5064fc;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+    .topbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .contact-info {
+        justify-content: center;
+        gap: 10px;
+        text-align: center;
+    }
+
     .menu-icon {
         display: block;
     }
@@ -106,4 +139,35 @@
         width: 100%;
         padding: 10px 0;
     }
+
+    .nav-links a {
+        color: #2C3E50; /* Dark blue-gray */
+        padding: 15px;
+        display: block;
+    }
+
+    .nav-links a:hover {
+        color: #E74C3C; /* Vibrant red */
+        background-color: #F8F9FA; /* Light gray for hover background */
+        border-bottom: none;
+    }
+
+    
+}
+
+/* Onload Animation */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.topbar, .navbar {
+    opacity: 0;
+    animation: fadeInDown 0.8s ease-out forwards;
 }
