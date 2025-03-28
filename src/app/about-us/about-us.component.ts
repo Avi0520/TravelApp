@@ -1,16 +1,19 @@
-import { Component, ElementRef, AfterViewInit, ViewChild, HostListener } from '@angular/core';
-import { CommonModule } from '@angular/common'; 
+import { Component, ElementRef, AfterViewInit, ViewChild, HostListener, OnDestroy, inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-about-us',
   standalone: true,
-  imports: [CommonModule], 
+  imports: [CommonModule],
   templateUrl: './about-us.component.html',
-  styleUrl: './about-us.component.css'
+  styleUrls: ['./about-us.component.css']
 })
-export class AboutUsComponent implements AfterViewInit {
+export class AboutUsComponent implements AfterViewInit, OnDestroy {
+  private platformId = inject(PLATFORM_ID);
+  private isBrowser = isPlatformBrowser(this.platformId);
+
+  @ViewChild('metricsContainer') metricsContainer!: ElementRef<HTMLElement>;
   
-  @ViewChild('metricsContainer', { static: false }) metricsContainer!: ElementRef;
   counts = [
     { label: 'Happy Customers', target: 22650, value: 0 },
     { label: 'Total Rides', target: 2500, value: 0 },
@@ -19,42 +22,77 @@ export class AboutUsComponent implements AfterViewInit {
   ];
   
   private hasAnimated = false;
-
-  constructor() {}
+  private animationFrameId: number | null = null;
+  private intervals: number[] = [];
 
   ngAfterViewInit() {
-    this.checkScroll();
+    if (!this.isBrowser) return;
+    
+    // Double check after a small delay to ensure element is available
+    setTimeout(() => this.checkScroll(), 100);
   }
 
-  @HostListener('window:scroll', [])
+  ngOnDestroy() {
+    if (!this.isBrowser) return;
+    
+    this.intervals.forEach(id => cancelAnimationFrame(id));
+    if (this.animationFrameId) {
+      cancelAnimationFrame(this.animationFrameId);
+    }
+  }
+
+  @HostListener('window:scroll')
   onScroll() {
-    this.checkScroll();
+    if (!this.isBrowser || this.hasAnimated) return;
+    this.animationFrameId = requestAnimationFrame(() => this.checkScroll());
   }
 
   private checkScroll() {
-    if (!this.hasAnimated && this.isElementInViewport(this.metricsContainer.nativeElement)) {
+    if (!this.metricsContainer?.nativeElement) {
+      console.warn('Metrics container not found');
+      return;
+    }
+
+    const element = this.metricsContainer.nativeElement;
+    if (this.isElementInViewport(element)) {
       this.startCounting();
       this.hasAnimated = true;
     }
   }
 
   private isElementInViewport(element: HTMLElement): boolean {
-    const rect = element.getBoundingClientRect();
-    return rect.top >= 0 && rect.bottom <= window.innerHeight;
+    try {
+      const rect = element.getBoundingClientRect();
+      const buffer = 100; // pixels buffer
+      return (
+        rect.top <= (window.innerHeight - buffer) &&
+        rect.bottom >= buffer
+      );
+    } catch (error) {
+      console.error('Error checking viewport:', error);
+      return false;
+    }
   }
 
   private startCounting() {
+    const duration = 2000; // 2 seconds for all counters
+    const startTime = performance.now();
+
     this.counts.forEach((count, index) => {
-      let current = 0;
-      const step = Math.ceil(count.target / 100); 
-      const interval = setInterval(() => {
-        current += step;
-        if (current >= count.target) {
-          current = count.target;
-          clearInterval(interval);
+      const animate = (currentTime: number) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        this.counts[index].value = Math.floor(progress * count.target);
+        
+        if (progress < 1) {
+          this.intervals[index] = requestAnimationFrame(animate) as unknown as number;
+        } else {
+          this.counts[index].value = count.target; // Ensure final value is exact
         }
-        this.counts[index].value = current; 
-      }, 20);
+      };
+      
+      this.intervals[index] = requestAnimationFrame(animate) as unknown as number;
     });
   }
 }

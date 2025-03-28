@@ -3,75 +3,96 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 1.2; /* Reduced line spacing */
 }
 
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 0; /* Removed all padding */
     background-color: #fff;
     text-align: center;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .title {
-    font-size: 34px;
-    margin-bottom: 30px;
+    font-size: 30px; /* Slightly smaller */
+    margin: 15px 0; /* Increased margin for spacing */
     color: #2c695f;
+    width: 100%;
 }
-
 .cards-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 45px;
-    justify-content: center;
-    max-width: 90%;
-    margin-bottom: 50px;
+    gap: 20px; /* More spacing between cards */
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto 40px; /* More space above and below */
+    padding: 0 10px;
 }
 
 .card {
-    width: 260px;
+    width: 240px; /* Slightly narrower */
     text-align: center;
-    padding: 10px;
-    background-color: #fff; /* Ensures it's not transparent */
-    border: none; /* Removes any unwanted borders */
+    padding: 0; /* No padding */
+    background-color: #fff;
+    border: none;
 }
 
-
-/* Image Styling */
 .card img {
-    width: 180px;
-    height: 180px;
+    width: 140px;
+    height: 140px;
     object-fit: cover;
     border-radius: 50%;
-    border: 3px solid #172d2a;
-    transition: transform 0.3s ease; /* Smooth zoom effect */
+    border: 3px solid #2c695f; /* Thicker circular border */
+    display: block;
+    margin: 0 auto 10px; /* Added space below the image */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
 }
 
-/* Image Hover Effect */
 .card img:hover {
-    transform: scale(1.1); /* Slight zoom effect */
+    transform: scale(1.1); /* Pop effect */
 }
 
 .card p {
-    margin-top: 10px;
-    font-size: 15px;
+    margin: 10px 0 0; /* Added space between image and text */
+    font-size: 13px; /* Smaller text */
     color: #333;
 }
 
 .cab-service {
-    margin-bottom: 50px;
+    margin: 20px 0; /* More space above and below */
+    width: 100%;
+    max-width: 700px;
+    padding: 0 10px;
+    font-size: 13px;
 }
 
 /* Responsive Design */
 @media (max-width: 900px) {
     .cards-container {
         grid-template-columns: repeat(2, 1fr);
+        max-width: 500px;
+        gap: 10px;
     }
 }
 
 @media (max-width: 600px) {
     .cards-container {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: 1fr;
+        max-width: 260px;
+        gap: 8px;
+    }
+    
+    .title {
+        font-size: 24px;
+        margin: 3px 0;
+    }
+    
+    .card img {
+        width: 120px;
+        height: 120px;
     }
 }
