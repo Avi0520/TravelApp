@@ -32,10 +32,10 @@ body {
 
 .img2 {
   position: absolute;
-  top: 55%; /* Adjust overlap position */
+  top: 50%; /* Adjust overlap position */
   left: 75%; /* Center alignment */
   transform: translate(-50%, -50%); /* Center the image properly */
-  width: 90%; /* Adjust size */
+  width: 95%; /* Adjust size */
   z-index: 1; /* Ensure it's above img1 */
   /* transform: translate(-30%, -50%) rotate(0deg); */
   animation: slowRotate 202s linear infinite;
