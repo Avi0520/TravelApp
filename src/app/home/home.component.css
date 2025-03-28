@@ -139,12 +139,12 @@ body {
     padding-left: 11vw;
   }
   .main-text {
-    font-size: 2rem;
+    font-size: 1.65rem;
     font-weight: bold;
     color: #333;
     line-height: 1;
     margin-bottom: 10px;
-  }
+    }
   
   .sub-text {
     font-size: 0.6rem;
@@ -154,9 +154,9 @@ body {
   }
   
   .book-btn {
-    font-size: 1rem;
-    padding: 7px 15px;
-    border-radius: 5px;
+    font-size: 0.6em;
+    padding: 5x 10x;
+    border-radius: 4x;
     background-color: #5064fc;
     color: white;
     border: none;
