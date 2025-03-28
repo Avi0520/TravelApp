@@ -1,26 +1,31 @@
-
-/* Topbar */
-*{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+* {
+    font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
 .topbar {
     background-color: #5064fc; 
     color: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 15px 5%;
     font-size: 1rem;
     flex-wrap: wrap;
     text-align: center;
+    position: fixed; /* Fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1002; /* Higher than other elements */
 }
 
 .contact-info {
     font-weight: bold;
-    flex: 1;
-    min-width: 250px;
     display: flex;
-    gap: 80px;
+    gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -37,49 +42,61 @@
 
 /* Navbar */
 .navbar {
-    background-color: #FFFFFF; /* Pure white */
+    background-color: #FFFFFF;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 5%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: sticky; /* Make navbar sticky */
-    top: 0; /* Stick to the top of the viewport */
-    z-index: 1000; /* Ensure navbar stays above other content */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    position: relative;
+    min-height: 150px;
+    margin-top: 55px; 
 }
 
-.logo img {
-    max-height: 165px; /* Adjust the value */
-    width: 130px;
-}
-.logo {
-    /* position: absolute; */
-    left: 20px;
-    top: 50%;
-    /* transform: translateY(-50%); */
+.nav-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
 }
 
-
+.nav-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 /* Hide checkbox */
 #menu-toggle {
     display: none;
 }
 
-/* Hamburger menu icon */
+/* Hamburger menu icon - Modified */
 .menu-icon {
     font-size: 30px;
     cursor: pointer;
-    display: none;
-    color: #2C3E50; /* Dark blue-gray */
-}
+    display: none; /* Hidden by default */
+    color: white;
+    position: absolute;
+    right: 20px;
+    top: 15%;
+    border: none;
+    z-index: 1002;}
 
 /* Nav Links */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 16px;
     flex-wrap: wrap;
+    margin-left: auto;
+    z-index: 1001;
 }
 
 .nav-links li {
@@ -88,7 +105,7 @@
 
 .nav-links a {
     text-decoration: none;
-    color: #2C3E50; /* Dark blue-gray */
+    color: white;
     font-size: 1rem;
     font-weight: bold;
     padding: 10px;
@@ -97,26 +114,20 @@
 }
 
 .nav-links a:hover {
-    color: #5064fc; /* Vibrant red */
-    border-bottom: 2px solid #5064fc;
+    border-bottom: 2px solid white;
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .topbar {
-        flex-direction: column;
-        text-align: center;
-        padding: 10px;
-    }
-
-    .contact-info {
+        flex-direction: row; /* Changed from column to row */
         justify-content: center;
-        gap: 10px;
         text-align: center;
+        padding: 15px 50px 15px 15px; /* Added right padding for toggle */
     }
 
     .menu-icon {
-        display: block;
+        display: block; /* Show toggle on mobile */
     }
 
     .nav-links {
@@ -131,7 +142,7 @@
         text-align: center;
     }
 
-    #menu-toggle:checked + .menu-icon + .nav-links {
+    #menu-toggle:checked ~ .nav-links {
         display: flex;
     }
 
@@ -141,33 +152,26 @@
     }
 
     .nav-links a {
-        color: #2C3E50; /* Dark blue-gray */
+        color: #2C3E50;
         padding: 15px;
         display: block;
     }
 
     .nav-links a:hover {
-        color: #E74C3C; /* Vibrant red */
-        background-color: #F8F9FA; /* Light gray for hover background */
+        color: #5064fc;
+        background-color: #F8F9FA;
         border-bottom: none;
     }
-
-    
 }
 
-/* Onload Animation */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+@media (max-width: 562px) {
+    .navbar {
+        margin-top: 95px; /* Adjust based on the height of .topbar */
     }
 }
 
-.topbar, .navbar {
-    opacity: 0;
-    animation: fadeInDown 0.8s ease-out forwards;
+@media (max-width: 365px) {
+    .navbar {
+        margin-top: 85px; /* Adjust based on the height of .topbar */
+    }
 }

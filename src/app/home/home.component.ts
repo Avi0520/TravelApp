@@ -15,5 +15,6 @@ export class HomeComponent {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   }
+  
 
 }
