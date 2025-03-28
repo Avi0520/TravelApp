@@ -10,14 +10,10 @@ import { Component } from '@angular/core';
 export class HomeComponent {
 
   scrollToContact(): void {
-    setTimeout(() => {
-      const contactSection = document.getElementById("contact");
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
-      } else {
-        console.warn("Contact section not found!");
-      }
-    }, 100); // Small delay to ensure the DOM is ready
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
 }
