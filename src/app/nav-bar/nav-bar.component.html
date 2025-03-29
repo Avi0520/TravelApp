@@ -1,26 +1,33 @@
-<!-- Topbar -->
-<div class="topbar">
-  <div class="contact-info">
-      <span><strong>Cell: </strong> 
-        <a href="tel:+919356717379">+91 9356717379</a>  
+<body>
+  <div class="topbar">
+    <div class="contact-info">
+      <span><strong>Cell: </strong>
+        <a href="tel:+919356717379">+91 9356717379</a>
       </span>
-      <span class="email"><strong>Email: </strong> 
-          <a href="rohanghogare2227&#64;gmail.com">rohanghogare2227&#64;gmail.com</a>
+      <span class="email"><strong>Email: </strong>
+        <a href="mailto:rohanghogare2227@gmail.com">rohanghogare2227.gmail.com</a>
       </span>
-  </div>
-</div>
+    </div>
 
-<!-- Navbar -->
-<nav class="navbar">
-  <div class="logo">
-    <img src="assets/Logo.png" alt="Best cabs in shirdi"> 
-  </div>
-  <input type="checkbox" id="menu-toggle">
+    <!-- Toggle button fixed at right corner -->
+    <input type="checkbox" id="menu-toggle">
   <label for="menu-toggle" class="menu-icon">&#9776;</label>
-  <ul class="nav-links">
-    <li><a href="#" (click)="scrollToSection('nav-bar');closeMenu()">Home</a></li>
-    <li><a href="#" (click)="scrollToSection('about-us');closeMenu()">About Us</a></li>
-    <li><a href="#" (click)="scrollToSection('services');closeMenu()">Services</a></li>
-    <li><a href="#" (click)="scrollToSection('contact');closeMenu()">Contact</a></li>
-  </ul>
-</nav>
+
+      <!-- Navigation links -->
+      <ul class="nav-links">
+        <li><a href="#" (click)="scrollToSection('nav-bar');closeMenu()">Home</a></li>
+        <li><a href="#" (click)="scrollToSection('about-us');closeMenu()">About Us</a></li>
+        <li><a href="#" (click)="scrollToSection('services');closeMenu()">Services</a></li>
+        <li><a href="#" (click)="scrollToSection('contact');closeMenu()">Contact</a></li>
+      </ul>
+  </div>
+
+
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-image">
+      <img src="assets/sai.jpg" alt="shirdi cabs">
+    </div>
+  </nav>
+</body>
