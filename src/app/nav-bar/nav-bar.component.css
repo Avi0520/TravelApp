@@ -6,7 +6,7 @@
 }
 
 .topbar {
-    background-color: #5064fc; 
+    background-color: #e05b5b; 
     color: white;
     display: flex;
     justify-content: center;
@@ -65,7 +65,6 @@
     z-index: -1;
     overflow: hidden;
 }
-
 
 .nav-image img {
     width: 100%;

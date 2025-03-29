@@ -87,7 +87,7 @@ export class CabBookingTableComponent {
 
   initiateWhatsAppBooking(vehicleType: string) {
     const phone = '919356717379'; // Your number without +
-    const message = `Hello! I would like to book ${vehicleType} for Shirdi. ` +
+    const message = `Hello! I would like to book ${vehicleType} for my journey. ` +
                  `Please let me know available dates and pricing details.`;
     
     const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
