@@ -9,6 +9,9 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.cab-home {
+  background-color: #fdf3e1; /* Choose your preferred color */
+}
 /* Container to keep everything centered */
 .responsive-container {
   display: flex;
@@ -44,7 +47,7 @@ body {
   width: auto;
   height: auto;
   object-fit: cover;
-  margin-top: 20vw;
+  margin-top: 10vw;
  
 }
 
@@ -136,14 +139,14 @@ body {
   
   .img3 {
     width: 90vw;
-    margin-top: 5vw;
+    margin-top: 0vw;
   }
 }
 
 @media (max-width: 800px) {
   .img3 {
     width: 100vw;
-    margin-top: 10vw;
+    margin-top: 1vw;
   }
   
   .main-text {
