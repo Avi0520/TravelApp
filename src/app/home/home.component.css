@@ -3,13 +3,15 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
 }
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.cab-home {
+  background-color: #fdf3e1; /* Choose your preferred color */
+}
 /* Container to keep everything centered */
 .responsive-container {
   display: flex;
@@ -21,23 +23,22 @@ body {
 
 /* Left Side - Images */
 .image-container {
-  position: relative; /* Parent container for absolute positioning */
+  position: relative;
   display: inline-block;
 }
 /* First Image (L1) */
 .img1 {
-  width: 100%; /* Full width */
+  width: 100%;
   display: block;
 }
 
 .img2 {
   position: absolute;
-  top: 50%; /* Adjust overlap position */
-  left: 75%; /* Center alignment */
-  transform: translate(-50%, -50%); /* Center the image properly */
-  width: 95%; /* Adjust size */
-  z-index: 1; /* Ensure it's above img1 */
-  /* transform: translate(-30%, -50%) rotate(0deg); */
+  top: 45%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  z-index: 1;
   animation: slowRotate 202s linear infinite;
 }
 
@@ -46,7 +47,8 @@ body {
   width: auto;
   height: auto;
   object-fit: cover;
-  margin-top: 20vw;
+  margin-top: 10vw;
+ 
 }
 
 @keyframes slowRotate {
@@ -60,17 +62,19 @@ body {
 
 /* Right Side - Text & Button */
 .text-container {
-  position: relative; /* Needed for overlap */
-  left: 10vw; /* Move right beyond its column */
-  z-index: 2; /* Ensure it's above other elements */
+  position: relative;
+  z-index: 2;
+  /* Removed left: 10vw to prevent unwanted shifting */
+  padding-left: 10%; /* Added consistent padding instead */
 }
 
 .main-text {
-  font-size: 4rem;
+  font-size: 3.1rem;
   font-weight: bold;
   color: #333;
   line-height: 1;
   margin-bottom: 10px;
+  display: inline-block; /* Prevents unwanted wrapping */
 }
 
 .sub-text {
@@ -95,72 +99,82 @@ body {
 }
 
 /* Responsive Scaling */
+@media (max-width: 1200px) {
+  .text-container {
+    padding-left: 8%;
+  }
 
-@media (max-width:800px) {
-  .img3{
-    text-align: center;
-    width: 100vw;
-    padding: 0%;
-    margin-top:10vw ;
-  }
   .main-text {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #333;
-    line-height: 1;
-    margin-bottom: 10px;
+    font-size: 2.5rem; /* Slightly larger than 2rem for better transition */
   }
   
   .sub-text {
-    font-size: 0.6rem;
-    color: #555;
-    line-height: 1;
-    margin-bottom: 20px;
+    font-size: 1rem; /* More reasonable size than 0.6rem */
   }
   
   .book-btn {
     font-size: 1rem;
-    padding: 7px 15px;
-    border-radius: 5px;
-    background-color: #5064fc;
-    color: white;
-    border: none;
-    cursor: pointer;
+    padding: 8px 16px;
   }
-  .text-container {
-    position: relative; /* Needed for overlap */
-  left: -2vw; /* Move right beyond its column */
-  z-index: 2; 
-  }
-  
 }
-@media (max-width:1000px) {
+
+@media (max-width: 1000px) {
   .text-container {
-    padding-left: 11vw;
+    padding-left: 11%; /* Reduced from 11vw to prevent extra space */
+    left: 0; /* Removed any left positioning */
   }
+  
   .main-text {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #333;
-    line-height: 1;
-    margin-bottom: 10px;
+    font-size: 2.5rem; /* Slightly larger than 2rem for better transition */
   }
   
   .sub-text {
-    font-size: 0.6rem;
-    color: #555;
-    line-height: 1;
-    margin-bottom: 20px;
+    font-size: 1rem; /* More reasonable size than 0.6rem */
   }
   
   .book-btn {
     font-size: 1rem;
-    padding: 7px 15px;
-    border-radius: 5px;
-    background-color: #5064fc;
-    color: white;
-    border: none;
-    cursor: pointer;
+    padding: 8px 16px;
   }
   
+  .img3 {
+    width: 90vw;
+    margin-top: 0vw;
+  }
+}
+
+@media (max-width: 800px) {
+  .img3 {
+    width: 100vw;
+    margin-top: 1vw;
+  }
+  
+  .main-text {
+    font-size: 2rem;
+  }
+  
+  .sub-text {
+    font-size: 0.8rem; /* Slightly larger than 0.6rem */
+  }
+  
+  .book-btn {
+    padding: 7px 15px;
+  }
+  
+  .text-container {
+    padding-left: 12%;
+    left: 0;
+    text-align: center; /* Center align for mobile */
+  }
+}
+
+@media (max-width: 576px) {
+  .main-text {
+    font-size: 1.8rem;
+    
+  }
+  
+  .sub-text {
+    font-size: 0.7rem;
+  }
 }
