@@ -87,25 +87,26 @@ export class CabBookingTableComponent {
 
   initiateWhatsAppBooking(vehicleType: string) {
     const phone = '919356717379'; // Your number without +
-    const message = `Book ${vehicleType} for Shirdi trip`;
+    const message = `Hello! I would like to book ${vehicleType} for Shirdi. ` +
+                 `Please let me know available dates and pricing details.`;
     
-    // Solution that works EVERYWHERE
     const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const desktopUrl = `https://web.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
+    const mobileUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    const appUrl = `whatsapp://send?phone=${phone}&text=${encodeURIComponent(message)}`;
     
     if (isMobile) {
-      // Mobile devices
-      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+      // Open WhatsApp on mobile devices
+      window.open(mobileUrl, '_blank');
     } else {
-      // Desktop - THIS WILL WORK FOR WHATSAPP DESKTOP APP
-      const desktopUrl = `https://web.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
+      // Try to open WhatsApp Desktop App first
+      window.location.href = appUrl;
       
-      // First try to open the app directly
-      window.location.href = `whatsapp://send?phone=${phone}&text=${encodeURIComponent(message)}`;
-      
-      // If WhatsApp desktop app isn't installed, fallback to web after 2 seconds
+      // If WhatsApp app isn't installed, fallback to web after 1.5 seconds
       setTimeout(() => {
         window.open(desktopUrl, '_blank');
-      }, 2000);
+      }, 1500);
     }
   }
+
 }
