@@ -1,14 +1,25 @@
 * {
+
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.cab-home {
+  background-color: #f8ebd5; /* Choose your preferred color */
+}
+
+
+
 body {
+  
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.cab-home {
+  background-color: #fdf3e1; /* Choose your preferred color */
+}
 /* Container to keep everything centered */
 .responsive-container {
   display: flex;
@@ -44,7 +55,7 @@ body {
   width: auto;
   height: auto;
   object-fit: cover;
-  margin-top: 20vw;
+  margin-top: 10vw;
  
 }
 
@@ -85,14 +96,14 @@ body {
   font-size: 1.2rem;
   padding: 10px 20px;
   border-radius: 5px;
-  background-color: #5064fc;
+  background-color: #354a7b;
   color: white;
   border: none;
   cursor: pointer;
 }
 
 .book-btn:hover {
-  background-color: #0056b3;
+  background-color: #4b597e;
 }
 
 /* Responsive Scaling */
@@ -136,14 +147,14 @@ body {
   
   .img3 {
     width: 90vw;
-    margin-top: 5vw;
+    margin-top: 0vw;
   }
 }
 
 @media (max-width: 800px) {
   .img3 {
     width: 100vw;
-    margin-top: 10vw;
+    margin-top: 1vw;
   }
   
   .main-text {
