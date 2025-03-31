@@ -28,6 +28,7 @@
           "-webkit-overflow-scrolling"
         ]
       }
-    ]
+    ],
+    "typescript-config/consistent-casing": "off"
   }
 }
